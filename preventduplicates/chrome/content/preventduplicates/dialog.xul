@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://preventduplicates/skin/dialog.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://preventduplicates/locale/prevent.dtd">
+<dialog xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&preventduplicates.dialog.title;" width="400" height="330"
+	persist="width height screenX screenY"
+	buttons="cancel,accept"
+	ondialogaccept="return Zotero_PreventDuplicates_Dialog.acceptSelection();"
+	buttonlabelcancel = "&preventduplicates.dialog.cancel.label;"
+	buttonlabelaccept = "&preventduplicates.dialog.accept.label;"
+	id="zotero-prevent-duplicates"
+	onload="Zotero_PreventDuplicates_Dialog.init()">
+	
+	<script src="chrome://preventduplicates/content/dialog.js"/>
+	
+	<vbox id="zotero-prevent-duplicates-container" flex="1">
+		<caption label="&preventduplicates.dialog.intro.label;" id="zotero-prevent-duplicates-intro"/>
+		<spacer flex="1"/>
+		<description id="zotero-prevent-duplicates-description" context="zoteroPreventDuplicatesContext"></description>
+		<spacer flex="1"/>
+		<caption label="&preventduplicates.dialog.confirm.label;" id="zotero-prevent-duplicates-confirm"/>
+	</vbox>
+</dialog>

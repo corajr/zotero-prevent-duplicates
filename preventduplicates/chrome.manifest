@@ -1,0 +1,5 @@
+content	preventduplicates				chrome/content/preventduplicates/
+locale	preventduplicates	en-US		chrome/locale/en-US/preventduplicates/
+skin	preventduplicates	default		chrome/skin/default/preventduplicates/
+
+overlay	chrome://zotero/content/zoteroPane.xul	chrome://preventduplicates/content/overlay.xul

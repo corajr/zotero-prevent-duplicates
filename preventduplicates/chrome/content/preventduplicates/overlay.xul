@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://preventduplicates/skin/overlay.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://preventduplicates/locale/prevent.dtd">
+
+<overlay id="preventduplicates-overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="prevent-duplicates-strings"
+			src="chrome://preventduplicates/locale/prevent.properties"/>
+	</stringbundleset>
+	
+	<!-- Include the main extension logic -->
+	<script src="chrome://zotero/content/include.js"/>
+	<script src="chrome://preventduplicates/content/include.js"/>
+</overlay>

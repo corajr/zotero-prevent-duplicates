@@ -1,0 +1,6 @@
+<!ENTITY preventduplicates.name						"Prevent Duplicates">
+<!ENTITY preventduplicates.dialog.title			"Possible Duplicate Found">
+<!ENTITY preventduplicates.dialog.intro.label		"A possible match was found in your library:">
+<!ENTITY preventduplicates.dialog.confirm.label		"Are you sure you want to add the current item?">
+<!ENTITY preventduplicates.dialog.cancel.label		"Cancel">
+<!ENTITY preventduplicates.dialog.accept.label		"Add">
