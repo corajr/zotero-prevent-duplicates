@@ -172,15 +172,15 @@ Zotero.Translate.Sandbox.Base._itemDone = function(translate, item) {
 			}
 		}
 	}
-		
-	// Fire itemSaving event
-	translate._runHandler("itemSaving", item);
-	
+
 	// If the item appears to be a duplicate, don't actually save
 	
 	if (!Zotero.PreventDuplicates.isUnique(item)) {
 		return;
 	}
+			
+	// Fire itemSaving event
+	translate._runHandler("itemSaving", item);
 	
 	if(translate instanceof Zotero.Translate.Web) {
 		// For web translators, we queue saves
