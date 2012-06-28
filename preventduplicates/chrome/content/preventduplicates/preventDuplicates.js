@@ -8,8 +8,11 @@ Zotero.PreventDuplicates = {
 		if (item != null) {
 			params["dataIn"] = {"text": Zotero.QuickCopy.getContentFromItems([item],Zotero.Prefs.get("export.quickCopy.setting"))["text"]};
 		}
-				
-		window.openDialog("chrome://preventduplicates/content/dialog.xul", "", "chrome, dialog, modal", params);
+		var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+                        .getService(Components.interfaces.nsIWindowMediator);
+        var win = wm.getMostRecentWindow("navigator:browser");
+
+		win.openDialog("chrome://preventduplicates/content/dialog.xul", "", "chrome, dialog, modal", params);
 
 		if (params.dataOut != null) {
 			return true;
@@ -76,15 +79,19 @@ Zotero.PreventDuplicates = {
 			var doiResults = Zotero.DB.query(sql + append + "WHERE fieldID = 26 AND value = ?);", [doi]);
 			if (doiResults.length > 0) {
 				returnValue = Zotero.PreventDuplicates.prompt(doiResults[0]["itemID"]);
+
+				// if DOI matches, stop search
+				return returnValue;
 			}
-			// if DOI matches, stop search
-			return returnValue;
 		}
 		
 		if (url != null) {
 			var urlResults = Zotero.DB.query(sql + append + "WHERE fieldID = 1 AND value = ?);", [url]);
 			if (urlResults.length > 0) {
 				returnValue = Zotero.PreventDuplicates.prompt(urlResults[0]["itemID"]);
+
+				// if URL matches, stop search
+				return returnValue;
 			}
 		}
 
@@ -111,8 +118,6 @@ Zotero.PreventDuplicates = {
 			}
 		}			
 
-		// if URL matches but either title or author is absent, go with URL result
-		// otherwise use combination of title and first author's last name
 		return returnValue;
 	}
 };
