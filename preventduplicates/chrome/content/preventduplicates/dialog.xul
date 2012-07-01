@@ -5,10 +5,7 @@
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	title="&preventduplicates.dialog.title;" width="400" height="330"
 	persist="width height screenX screenY"
-	buttons="cancel,accept"
 	ondialogaccept="return Zotero_PreventDuplicates_Dialog.acceptSelection();"
-	buttonlabelcancel = "&preventduplicates.dialog.cancel.label;"
-	buttonlabelaccept = "&preventduplicates.dialog.accept.label;"
 	id="zotero-prevent-duplicates"
 	onload="Zotero_PreventDuplicates_Dialog.init()">
 	
@@ -20,5 +17,10 @@
 		<description id="zotero-prevent-duplicates-description" context="zoteroPreventDuplicatesContext"></description>
 		<spacer flex="1"/>
 		<caption label="&preventduplicates.dialog.confirm.label;" id="zotero-prevent-duplicates-confirm"/>
+
+		<hbox>
+			<button dlgtype="cancel" label="&preventduplicates.dialog.cancel.label;"/>
+			<button dlgtype="accept" label="&preventduplicates.dialog.accept.label;"/>
+		</hbox>
 	</vbox>
 </dialog>
