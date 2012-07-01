@@ -6,7 +6,9 @@ Zotero_PreventDuplicates_Dialog.init = function () {
 	
 	this.io = window.arguments[0];
 	var description = document.getElementById("zotero-prevent-duplicates-description");
-	description.textContent = this.io.dataIn["text"];
+	var desc_div = document.createElementNS("http://www.w3.org/1999/xhtml","div");
+	desc_div.innerHTML = this.io.dataIn["html"];
+	description.appendChild(desc_div);
 }
 
 Zotero_PreventDuplicates_Dialog.acceptSelection = function() {
