@@ -9,8 +9,8 @@ Zotero.PreventDuplicates = {
 			params["dataIn"] = {"text": item.getDisplayTitle(true)};
 		}
 		var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                        .getService(Components.interfaces.nsIWindowMediator);
-        var win = wm.getMostRecentWindow("navigator:browser");
+						.getService(Components.interfaces.nsIWindowMediator);
+		var win = wm.getMostRecentWindow("navigator:browser");
 
 		win.openDialog("chrome://preventduplicates/content/dialog.xul", "", "chrome, dialog, modal", params);
 
