@@ -6,7 +6,7 @@ Zotero.PreventDuplicates = {
 		var params = {"dataIn": null, "dataOut": null};
 		
 		if (item != null) {
-			params["dataIn"] = {"text": Zotero.QuickCopy.getContentFromItems([item],Zotero.Prefs.get("export.quickCopy.setting"))["text"]};
+			params["dataIn"] = {"text": item.getDisplayTitle(true)};
 		}
 		var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
                         .getService(Components.interfaces.nsIWindowMediator);
