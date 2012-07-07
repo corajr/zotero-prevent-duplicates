@@ -112,10 +112,10 @@ Zotero.PreventDuplicates = {
 			
 			if (title != null && lastName != null) {
 				var titleLastNameResults = Zotero.DB.query(sql, [thisTitle, lastName]);
+				if (titleLastNameResults.length > 0) {
+					returnValue = Zotero.PreventDuplicates.prompt(titleLastNameResults[0]["itemID"]);
+				}
 			}		
-			if (titleLastNameResults.length > 0) {
-				returnValue = Zotero.PreventDuplicates.prompt(titleLastNameResults[0]["itemID"]);
-			}
 		}			
 
 		return returnValue;
