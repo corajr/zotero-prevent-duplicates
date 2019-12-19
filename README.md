@@ -1,4 +1,9 @@
-# Prevent Duplicates in Zotero
+# Prevent Duplicates in Zotero [UNMAINTAINED] 
+
+No longer updated, sorry!
+
+<hr/>
+
 
 This plugin runs a preflight check when importing items in Zotero, prompting the user to confirm the addition if a potential match is found. It runs queries for DOI, URL, and the combination of title and first author's last name to assess uniqueness.
 
